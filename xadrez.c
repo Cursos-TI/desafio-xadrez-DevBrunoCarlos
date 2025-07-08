@@ -1,32 +1,43 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    
+    //Movimentos da TORRE usando FOR
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    int movimentoTorre = 5; //variavel só para saber quantos movimentos a TORRE tem que ter
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    printf("Movimento da TORRE\n\n");
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    for (int i = 1; i <= movimentoTorre; i++) {
+        printf("direita\n");
+    }
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    //movimento do BISPO usando WHILE
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    int movimentoBispo = 5; //variavel só para saber quantos movimentos o BISPO tem que ter
+    int i2 = 1;
+
+    printf("\nMovimento do BISPO:\n\n");
+
+    while (i2 <= movimentoBispo) {
+        printf("cima direita\n");
+        i2++;
+    }
+
+
+    //movimento da RAINHA usando DO-WHILE
+
+    int movimentoRainha = 8; //variavel só para saber quantos movimentos a RAINHA tem que ter
+    int i3 = 1;
+
+    printf("\nMovimento da rainha: \n\n");
+    do {
+        printf("esquerda\n");
+        i3++;
+    } while (i3 <= movimentoRainha);
+
 
     return 0;
 }
