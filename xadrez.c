@@ -39,5 +39,21 @@ int main() {
     } while (i3 <= movimentoRainha);
 
 
+
+    //Movimento do CAVALO usando LOOPS ANINHADOS
+
+    int movimentoCavalo = 1; //variavel só para saber quantos movimentos o CAVALO tem que ter
+
+    printf("\nMovimento do cavalo: \n\n");
+    while (movimentoCavalo < 2) {
+        for (int i4 = 1; i4 <= 2; i4++) {  //loop aninhado
+            printf("baixo\n");  //imprime "baixo" 2 vezes
+        }
+
+        printf("esquerda\n");  //imprime "esquerda" 1 vez
+        movimentoCavalo++;
+    }
+
+
     return 0;
 }
