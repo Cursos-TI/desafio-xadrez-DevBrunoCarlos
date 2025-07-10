@@ -1,59 +1,75 @@
 #include <stdio.h>
 
+#include <stdio.h>
+
+void movimentoTorre(int casasT) {  //função do movimento da TORRE
+    if (casasT > 0) {
+        printf("cima\n");
+
+    movimentoTorre(casasT - 1);
+    }
+}
+
+
+void movimentoBispo(int casasB) {  //função do movimento do BISPO usando LOOP ANINHADO
+    for (int i = 4; i < casasB; i++) {
+        for (int j = 0; j < casasB; j++) {
+            printf("cima direita\n");
+        }
+    }
+}
+
+
+void movimentoRainha(int casasR) {  //função do movimento da RAINHA 
+    if (casasR > 0) {
+        printf("esquerda\n");
+
+    movimentoRainha(casasR - 1);
+    }
+}
+
 
 int main() {
-    
-    //Movimentos da TORRE usando FOR
 
-    int movimentoTorre = 5; //variavel só para saber quantos movimentos a TORRE tem que ter
+    int casasTorre = 5;
 
-    printf("Movimento da TORRE\n\n");
+    printf("\nMovimento da TORRE\n\n");  //chamando a função da TORRE
 
-    for (int i = 1; i <= movimentoTorre; i++) {
-        printf("direita\n");
-    }
-
-
-    //movimento do BISPO usando WHILE
-
-    int movimentoBispo = 5; //variavel só para saber quantos movimentos o BISPO tem que ter
-    int i2 = 1;
-
-    printf("\nMovimento do BISPO:\n\n");
-
-    while (i2 <= movimentoBispo) {
-        printf("cima direita\n");
-        i2++;
-    }
-
-
-    //movimento da RAINHA usando DO-WHILE
-
-    int movimentoRainha = 8; //variavel só para saber quantos movimentos a RAINHA tem que ter
-    int i3 = 1;
-
-    printf("\nMovimento da rainha: \n\n");
-    do {
-        printf("esquerda\n");
-        i3++;
-    } while (i3 <= movimentoRainha);
+    movimentoTorre(casasTorre);
 
 
 
-    //Movimento do CAVALO usando LOOPS ANINHADOS
+    int casasBispo = 5;
 
-    int movimentoCavalo = 1; //variavel só para saber quantos movimentos o CAVALO tem que ter
+    printf("\nMovimento do BISPO\n\n");  //chamando a função do BISPO (com loop aninhado)
 
-    printf("\nMovimento do cavalo: \n\n");
-    while (movimentoCavalo < 2) {
-        for (int i4 = 1; i4 <= 2; i4++) {  //loop aninhado
-            printf("baixo\n");  //imprime "baixo" 2 vezes
+    movimentoBispo(casasBispo);
+
+
+
+    int casasRainha = 8;
+
+    printf("\nMovimento da RAINHA\n\n");  //chamando a função da RAINHA
+
+    movimentoRainha(casasRainha);
+
+
+
+    int casasCavalo = 2;
+
+    printf("\nMovimento do CAVALO\n\n");
+
+    for (int i = 1, j = 1; i < casasCavalo && j < casasCavalo; i++, j++) {  //movimento do CAVALO usando LOOP AVANÇADO
+        while (i <= casasCavalo) {  //while para printar "cima" duas vezes
+            printf("cima\n");
+            i++;
         }
 
-        printf("esquerda\n");  //imprime "esquerda" 1 vez
-        movimentoCavalo++;
+        if (j <= casasCavalo) {  //if para printar "direita" uma vez só
+            printf("direita\n");
+            j++;
+        }
     }
-
 
     return 0;
 }
